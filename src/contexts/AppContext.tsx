@@ -60,16 +60,16 @@ const AppContextProvider: React.FC<IAppContextProviderProps> = ({
 
   const genrateInfo = useCallback(async (value: string) => {
     if (value === "users") {
-      const newUsers = generateUser();
+      const newUsers = await generateUser();
       setUsers([...users, ...newUsers]);
     } else if (value === "products") {
-      const newProducts = generateProducts();
+      const newProducts = await generateProducts();
       setProducts([...products, ...newProducts]);
     } else if (value === "comments") {
       const newComments = await generateComments();
       setComments([...comments, ...newComments]);
     } else if (value === "vehicles") {
-      const newVehicles = generateVehicles();
+      const newVehicles = await generateVehicles();
       setVehicles([...vehicles, ...newVehicles]);
     }
     setData("");
